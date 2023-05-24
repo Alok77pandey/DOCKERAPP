@@ -1,14 +1,23 @@
-# Use a base image with Java installed
-FROM openjdk:11-jdk
+# Use a base image
+FROM alpine:latest
+
+# Set metadata for the image
+LABEL maintainer="AlokPandey alokemp777@gmail.com"
 
 # Set the working directory inside the container
-WORKDIR https://github.com/Alok77pandey/DOCKERAPP.git
+WORKDIR /app
 
-# Copy the Java source code to the container
-COPY RealTimeClock.java
+# Copy the application files to the container
+COPY . /app
 
-# Build the Java application
-RUN javac RealTimeClock.java
+# Install any dependencies or perform build steps
+RUN apk --no-cache add curl
 
-# Set the entry point command to run the Java application
-CMD ["java", "RealTimeClock"]
+# Define an environment variable
+ENV MESSAGE "Hello, Docker!"
+
+# Expose a port (optional)
+EXPOSE 8080
+
+# Define the entry point or command to run when the container starts
+CMD ["sh", "-c", "echo $MESSAGE && sleep 10"]
