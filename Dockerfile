@@ -2,7 +2,7 @@
 FROM openjdk:11-jdk
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR https://github.com/Alok77pandey/DOCKERAPP.git
 
 # Copy the Java source code to the container
 COPY RealTimeClock.java /app
