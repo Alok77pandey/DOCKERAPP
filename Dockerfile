@@ -2,6 +2,6 @@ FROM openjdk:11-jdk
 
 WORKDIR /usr/src/app
 
-COPY RealTimeClock.java .
+COPY RealTimeClock.jar .
 
-CMD ["java", "-jar", "RealTimeClock.java"]
+CMD ["java", "-jar", "RealTimeClock.jar"]
