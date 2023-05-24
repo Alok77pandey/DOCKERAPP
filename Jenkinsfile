@@ -32,7 +32,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push alokpandey25/dockerapp:latest'
+				sh 'docker push -d alokpandey25/dockerapp:latest'
 			}
 		}
 	}
