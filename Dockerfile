@@ -8,7 +8,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y git
 
 # Clone the Git repository
-RUN git clone <repository_url> .
+RUN git clone https://github.com/Alok77pandey/DOCKERAPP.git .
 
 # Build the Java application
 RUN javac RealTimeClock.java
