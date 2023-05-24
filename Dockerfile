@@ -4,10 +4,7 @@ FROM openjdk:11-jdk
 # Set the working directory inside the container
 WORKDIR /app
 
-# Install Git
-RUN apt-get update && apt-get install -y git
-
-# Clone the Git repository
+# Clone the GitHub repository
 RUN git clone https://github.com/Alok77pandey/DOCKERAPP.git .
 
 # Build the Java application
