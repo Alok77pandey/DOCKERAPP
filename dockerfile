@@ -1,12 +1,7 @@
-FROM node:latest
+FROM openjdk:11-jdk
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY RealTimeClock.jar .
 
-RUN npm install
-
-COPY . .
-
-EXPOSE 3000
-CMD [ "node", "index.js" ]
+CMD ["java", "-jar", "RealTimeClock.jar"]
