@@ -35,6 +35,12 @@ pipeline{
 				sh 'docker push alokpandey25/dockapp:latest'
 			}
 		}
+		stage('	Run') {
+
+			steps {
+				sh 'docker run -d -p 8080:80  alokpandey25/dockapp:latest'
+			}
+		}
 	}
 
 	post {
