@@ -5,7 +5,7 @@ FROM openjdk:11-jdk
 WORKDIR https://github.com/Alok77pandey/DOCKERAPP.git
 
 # Copy the Java source code to the container
-COPY RealTimeClock.java /app
+COPY RealTimeClock.java
 
 # Build the Java application
 RUN javac RealTimeClock.java
