@@ -4,12 +4,14 @@ FROM openjdk:11-jdk
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the Java source code to the container
-COPY src/RealTimeClock.java /app
+# Install Git
+RUN apt-get update && apt-get install -y git
 
-# Compile the Java source code
+# Clone the Git repository
+RUN git clone <repository_url> .
+
+# Build the Java application
 RUN javac RealTimeClock.java
 
 # Set the entry point command to run the Java application
 CMD ["java", "RealTimeClock"]
-
