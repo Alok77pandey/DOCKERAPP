@@ -18,7 +18,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t alokpandey25/dockerapp:latest .'
+				sh 'docker build -t alokpandey25/dockapp:latest .'
 			}
 		}
 
@@ -32,7 +32,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push -d alokpandey25/dockerapp:latest'
+				sh 'docker push -d alokpandey25/dockapp:latest'
 			}
 		}
 	}
